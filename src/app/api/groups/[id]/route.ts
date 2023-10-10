@@ -1,12 +1,7 @@
+import type { Group } from "@/lib/models/group"
 import { NextResponse } from "next/server"
 
-import {
-  deleteGroup,
-  editGroup,
-  findGroupById,
-  type Group,
-} from "@/lib/models/group"
-
+import { deleteGroup, editGroup, findGroupById } from "@/lib/models/group"
 
 export function GET(request: Request, context: { params: { id: string } }) {
   const groupId = context.params.id
@@ -22,7 +17,10 @@ export function GET(request: Request, context: { params: { id: string } }) {
   return NextResponse.json({ data: group }, { status: 200 })
 }
 
-export async function PATCH(request: Request, context: { params: { id: string } }) {
+export async function PATCH(
+  request: Request,
+  context: { params: { id: string } },
+) {
   const body = (await request.json()) as Group
   const groupId = context.params.id
 
