@@ -5,6 +5,7 @@ export default function Page() {
   // const router = useRouter()
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-24">
+      <h1 className="text-lg mb-4">Admin page for handling groups</h1>
       <GroupList />
       {/* <button
         type="button"
